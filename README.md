@@ -1,4 +1,3 @@
-# CapBnB-neighborhoods-service
 # Project Name
 
 > Project description
