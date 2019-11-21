@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
-const port = 3000;
 const parser = require('body-parser');
+const PORT = process.env.PORT || 3001;
 
 app.use(parser.json());
 // use body-parser to extract the entire body portion of an incoming request stream and expose it in req.body
@@ -12,6 +12,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-app.listen(port, () => {
-  console.log(`Connection Success! Listening on port ${port}!`);
+app.listen(PORT, () => {
+  console.log(`Connection Success! Listening on port ${PORT}!`);
 });
