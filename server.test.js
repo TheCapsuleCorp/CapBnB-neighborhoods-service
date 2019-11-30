@@ -14,7 +14,7 @@ const mockNeighborhood = {
   description: 'Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.',
   latitude: 29.806827,
   longitude: 113.013638,
-  guidebookId: 2
+  guidebookId: 2,
 };
 
 
