@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3000;
 app.use(bodyparser.json());
 //looks at requests where the Content-Type: application/json header is present
 //and transforms the text-based JSON input into JS-accessible variables under req.body.
-app.use(express.static('./client/dist'));
+app.use(express.static(`${__dirname}/../client/dist`));
 // app.use(express.static(`${__dirname}/../client/dist`));
 //to serve static files such as images, CSS files, and JavaScript files
 app.use(bodyparser.urlencoded({ extended: true }));

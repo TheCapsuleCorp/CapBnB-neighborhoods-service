@@ -1,5 +1,5 @@
 import React from 'react';
-import Details from './Details.jsx';
+import Details from './Details';
 
 class App extends React.Component {
   constructor(props) {
