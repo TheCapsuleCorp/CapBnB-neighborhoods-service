@@ -900,7 +900,7 @@ let nbData = [{
   guidebookId: 3
 }];
 
-nbData = nbData.map(function(item, index) {
+nbDataWithRoomId = nbData.map(function(item, index) {
   return {
     roomId: 11111111 + index,
     name: item.name,
@@ -914,4 +914,4 @@ nbData = nbData.map(function(item, index) {
   };
 });
 
-module.exports.nbData = nbData;
+module.exports.nbData = nbDataWithRoomId;

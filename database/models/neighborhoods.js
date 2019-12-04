@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const data = require('../nbmockdata').nbData;
 
 const neighborhoods = new mongoose.Schema({
   name: String,
@@ -13,11 +12,5 @@ const neighborhoods = new mongoose.Schema({
 });
 
 const Neighborhood = mongoose.model('Neighborhood', neighborhoods);
-
-Neighborhood.insertMany(data, (err) => {
-  if (err) {
-    console.log(err);
-  }
-});
 
 module.exports = Neighborhood;

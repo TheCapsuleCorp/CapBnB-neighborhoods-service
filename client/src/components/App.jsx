@@ -16,20 +16,20 @@ class App extends React.Component {
 
   componentDidMount() {
 
-    // $.ajax({
-    //   url: '/api/rooms/11111111/neighborhood',
-    //   dataType: 'json',
-    //   method: 'GET',
-    //   contentType: 'application/json',
-    //   // data: JSON.stringify({jsonData: data}),
-    //   success: function(data) {
-    //     console.log(data);
-    //   },
-    //   error: function(error) {
-    //     console.log(error);
-    //   },
-    //
-    // });
+    $.ajax({
+      url: '/api/rooms/11111111/neighborhood',
+      // dataType: 'json',
+      method: 'GET',
+      // contentType: 'application/json',
+      // data: JSON.stringify({jsonData: data}),
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(error) {
+        console.log(error);
+      },
+
+    });
 
   };
 

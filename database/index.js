@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const data = require('./nbmockdata').nbData;
+const data = require('./nbmockdata');
 const Neighborhood = require('./models/neighborhoods');
 const db = mongoose.connection;
 
@@ -39,13 +39,3 @@ const connect = () => {
 };
 
 module.exports.connect = connect;
-
-connect();
-
-Neighborhood.insertMany(data, (err) => {
-  if (err) {
-    console.log(err);
-  }
-});
-
-db.close;

@@ -3,8 +3,9 @@ const Neighborhood = require('../models/neighborhoods.js');
 module.exports = {
   neighborhoods: {
     get: (req, res) => {
-      const roomId = Number(req.params.guidebookId);
-      Neighborhoods.find({ guidebookId })
+      console.log('are we connected to controllers   ', req.url);
+      const roomId = Number(req.params.roomId);
+      Neighborhood.find({ guidebookId: roomId })
         .then(neighborhoods => {
           res.json(neighborhoods);
         })
