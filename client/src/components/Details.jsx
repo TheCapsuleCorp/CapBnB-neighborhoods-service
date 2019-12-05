@@ -5,20 +5,28 @@ class Details extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      showReadMore: false
+      showReadMore: false,
     }
+    this.handleReadMoreClick = this.handleReadMoreClick.bind(this);
   }
 
   handleReadMoreClick(event) {
     event.preventDefault();
     this.setState({
-      showReadMore: true
+      showReadMore: !this.state.showReadMore,
     });
   }
 
   render() {
+    let readMore = null;
+    if(this.state.showReadMore === true) {
+      readMore = <ReadMore />
+    }
     return (
-      <a href="https://www.templink.com">Read more about the neighborhood</a>
+      <div>
+        <div onClick={this.handleReadMoreClick}>Read more about the neighborhood</div>
+        {readMore}
+      </div>
     );
   }
 }
