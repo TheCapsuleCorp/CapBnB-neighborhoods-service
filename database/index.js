@@ -5,6 +5,7 @@ const db = mongoose.connection;
 
 const connect = () => {
   const dbURI = process.env.MONGODB_URI || 'mongodb://localhost/CapBnB-neighborhoods-service';
+  //get more info about this
 
   return mongoose.connect(dbURI).then(() => {
 
