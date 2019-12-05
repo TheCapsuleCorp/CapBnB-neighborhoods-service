@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const neighborhoods = new mongoose.Schema({
+  roomId: Number,
   name: String,
   city: String,
   country: String,
