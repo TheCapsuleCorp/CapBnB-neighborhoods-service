@@ -5,7 +5,7 @@ module.exports = {
     get: (req, res) => {
       console.log('are we connected to controllers   ', req.url);
       const roomId = Number(req.params.roomId);
-      Neighborhood.find({ guidebookId: roomId })
+      Neighborhood.find({ roomId: roomId })
         .then(neighborhoods => {
           res.json(neighborhoods);
         })
