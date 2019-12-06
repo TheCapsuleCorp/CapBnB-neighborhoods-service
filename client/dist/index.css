@@ -14,7 +14,7 @@
   font-family: 'Cereal';
   src: url('./assets/fonts/AirBnB-Cereal/AirbnbCerealApp-Light.woff2') format('woff2'),
        url('./assets/fonts/AirBnB-Cereal/AirbnbCerealApp-Light.woff') format('woff');
-  font-weight: 300;
+  font-weight: 100;
   font-style: normal;
 }
 
@@ -59,14 +59,15 @@ html, body, #root {
   font-weight: 300;
 }
 
-.description {
+.app {
   font-family: 'Cereal';
-  font-weight: 300;
+  font-weight: 100;
 }
 
-a {
+.readMore {
+  width: auto;
+  height: auto;
   font-family: 'Cereal';
   font-weight: normal;
-  text-decoration: none;
-  color: rgb(0, 157, 156);
+  color: rgb(0,157,156)
 }

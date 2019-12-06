@@ -1,5 +1,8 @@
 import React from 'react';
 import ReadMore from './ReadMore';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
 
 class Details extends React.Component {
   constructor(props) {
@@ -14,21 +17,22 @@ class Details extends React.Component {
   handleReadMoreClick(event) {
     this.setState({
       showReadMore: !this.state.showReadMore,
-      //toggles boolean value to handle all clicks for conditional rendering.
     });
   }
 
   render() {
-    //conditional rendering example
     let readMore = null;
-    if (this.state.showReadMore === true) {
-      readMore = <ReadMore guidebookId={this.props.guidebookId} />
+    let icon = faChevronDown;
+    if(this.state.showReadMore === true) {
+      readMore = <ReadMore />
+      icon = faChevronUp;
     }
     return (
       <div>
-        <p className="description">{this.state.name}'s place is located in {this.state.city}, {this.state.country}.</p>
-        <p>{this.state.description}</p>
-        <div onClick={this.handleReadMoreClick}>Read more about the neighborhood</div>
+        <div onClick={this.handleReadMoreClick}>
+          <span className="readMore">Read more about the neighborhood</span>
+          <FontAwesomeIcon icon={icon} />
+        </div>
         {readMore}
       </div>
     );

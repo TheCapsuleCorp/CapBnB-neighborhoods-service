@@ -6,6 +6,7 @@ const mongodo = require('../database');
 const db = require('../database/index');
 // const mongoose = require('mongoose');
 const PORT = process.env.PORT || 3000;
+const nhController = require('../database/controllers/neighborhoods.js');
 
 
 
@@ -20,12 +21,14 @@ app.use(bodyparser.urlencoded({ extended: true }));
 //app.use(bp.urlencoded({extended: true}) works similarly to body parse the extended: true
 //ensures that the req.body object will contain values of any type instead of just strings.
 
-
 app.get('/rooms/:roomId', (req, res) => {
-  console.log(req.params.roomId);
   res.sendFile(path.resolve(__dirname, '../client/dist/index.html'));
 });
+
+app.get('/api/rooms/:roomId/neighborhood', nhController.neighborhoods.get);
 
 app.listen(PORT, () => {
   console.log(`Connection Success! Listening on port ${PORT}!`);
 });
+
+db.connect();
