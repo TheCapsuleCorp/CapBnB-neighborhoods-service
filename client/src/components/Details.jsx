@@ -24,7 +24,7 @@ class Details extends React.Component {
     }
     return (
       <div>
-        <div onClick={this.handleReadMoreClick}>Read more about the neighborhood</div>
+        <div className="readMore" onClick={this.handleReadMoreClick}>Read more about the neighborhood</div>
         {readMore}
       </div>
     );
