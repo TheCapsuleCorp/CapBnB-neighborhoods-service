@@ -3,7 +3,6 @@ import ReadMore from './ReadMore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
-
 class Details extends React.Component {
   constructor(props) {
     super(props);
@@ -23,7 +22,6 @@ class Details extends React.Component {
   render() {
     let readMore = null;
     let icon = faChevronDown;
-    let changeChevron = null;
     if(this.state.showReadMore === true) {
       readMore = <ReadMore />
       icon = faChevronUp;
