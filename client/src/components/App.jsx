@@ -1,5 +1,5 @@
 import React from 'react';
-import Details from './Details.jsx';
+import Details from './Details';
 
 class App extends React.Component {
   constructor(props) {
@@ -15,7 +15,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-
     $.ajax({
       url: `/api/rooms/${this.props.roomId}/neighborhood`,
       // dataType: 'json',
@@ -38,7 +37,6 @@ class App extends React.Component {
       },
 
     });
-
   };
 
   render() {
