@@ -1,7 +1,7 @@
 import React from 'react';
-import ReadMore from './ReadMore'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import ReadMore from './ReadMore';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 
 class Details extends React.Component {

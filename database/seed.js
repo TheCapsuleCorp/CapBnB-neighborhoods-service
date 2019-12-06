@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 
 
 db.connect().then(() => {
-  console.log('hello world');
   return Neighborhood.deleteMany({});
 }).then((neighborhoods) => {
   return Neighborhood.insertMany(data);

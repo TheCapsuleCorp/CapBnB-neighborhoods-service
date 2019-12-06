@@ -18,19 +18,15 @@ class App extends React.Component {
 
     $.ajax({
       url: `/api/rooms/${this.props.roomId}/neighborhood`,
-      // dataType: 'json',
       method: 'GET',
-      // contentType: 'application/json',
-      // data: JSON.stringify({jsonData: data}),
-      success: (data) => {
-        console.log(data);
+      success: (neighborhood) => {
         this.setState({
-          hostName: data[0].name,
-          city: data[0].city,
-          country: data[0].country,
-          gettingAround: data[0].gettingAround,
-          description: data[0].description,
-          guidebookId: data[0].guidebookId,
+          hostName: neighborhood[0].name,
+          city: neighborhood[0].city,
+          country: neighborhood[0].country,
+          gettingAround: neighborhood[0].gettingAround,
+          description: neighborhood[0].description,
+          guidebookId: neighborhood[0].guidebookId,
         });
       },
       error: function(error) {
