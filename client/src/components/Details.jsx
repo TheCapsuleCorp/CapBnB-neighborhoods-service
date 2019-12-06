@@ -3,17 +3,18 @@ import ReadMore from './ReadMore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
+
 class Details extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showReadMore: false,
     }
+
     this.handleReadMoreClick = this.handleReadMoreClick.bind(this);
   }
 
   handleReadMoreClick(event) {
-    event.preventDefault();
     this.setState({
       showReadMore: !this.state.showReadMore,
     });

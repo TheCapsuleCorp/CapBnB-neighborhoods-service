@@ -52,12 +52,11 @@
 
 html, body, #root {
   background-color: white;
-  color: rgb(80,80,80);
+  color: rgb(80, 80, 80);
   font-family: 'Cereal';
   width: 100%;
   height: 100%;
   font-weight: 300;
-
 }
 
 .app {
