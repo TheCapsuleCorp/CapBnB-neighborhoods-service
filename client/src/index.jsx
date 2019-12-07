@@ -2,4 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 
-ReactDOM.render(<App roomId={11111112} />, document.getElementById('root'));
+let listingId = window.location.href.split('/')[4];
+if (!listingId || listingId.length !== 8) {
+  listingId = '11111142';
+}
+
+ReactDOM.render(<App roomId={listingId} />, document.getElementById('root'));
