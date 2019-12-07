@@ -24,14 +24,14 @@ class Details extends React.Component {
     let readMore = null;
     let icon = faChevronDown;
     if(this.state.showReadMore === true) {
-      readMore = <ReadMore />
+      readMore = <ReadMore gettingAround={this.props.gettingAround} />
       icon = faChevronUp;
     }
     return (
       <div>
         <div onClick={this.handleReadMoreClick}>
           <span className="readMore">Read more about the neighborhood</span>
-          <FontAwesomeIcon icon={icon} />
+            <FontAwesomeIcon className="chevron" icon={icon} />
         </div>
         {readMore}
       </div>
