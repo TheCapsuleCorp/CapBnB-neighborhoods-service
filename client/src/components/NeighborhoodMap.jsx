@@ -3,7 +3,7 @@ import Details from './Details';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
 
 // DO NOT COMMIT ME TO VERSION CONTROL!!!!!
-const GOOGLE_MAPS_API_KEY = 'AIzaSyAvEiMdWiSAe0creBJcvd4zEeRlWNBMaJw';
+const GOOGLE_MAPS_API_KEY = 'AIzaSyALnk5uTIhLwMzcanWu3Dspzuh3Gt47C2k';
 
 class NeighborHoodMap extends React.Component {
   constructor(props) {
