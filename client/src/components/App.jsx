@@ -1,5 +1,7 @@
 import React from 'react';
 import Details from './Details';
+import { Map, GoogleApiWrapper } from 'google-maps-react';
+import NeighborHoodMap from './NeighborhoodMap';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,7 +12,9 @@ class App extends React.Component {
       country: '',
       gettingAround: '',
       description: '',
-      guidebookId: null
+      lat: null,
+      lng: null,
+      guidebookId: null,
     };
   }
 
@@ -25,6 +29,8 @@ class App extends React.Component {
           country: neighborhood[0].country,
           gettingAround: neighborhood[0].gettingAround,
           description: neighborhood[0].description,
+          lat: neighborhood[0].latitude,
+          lng: neighborhood[0].longitude,
           guidebookId: neighborhood[0].guidebookId,
         });
       },
@@ -36,13 +42,18 @@ class App extends React.Component {
   };
 
   render() {
+    const { hostName, city, country, description, gettingAround, guidebookId, lat, lng } = this.state;
     return (
       <div className="app">
         <h2>The neighborhood</h2>
-        <p>{this.state.hostName}'s place is located in {this.state.city}, {this.state.country}.</p>
-        <p>{this.state.description}</p>
-        <p>{this.state.gettingAround}</p>
-        <Details guidebookId={this.state.guidebookId} />
+        <p>{hostName}'s place is located in {city}, {country}.</p>
+        <p>{description}</p>
+        <p>{gettingAround}</p>
+
+          <Details guidebookId={guidebookId} gettingAround={gettingAround} />
+        <div  className="NeighborHoodMap">
+          <NeighborHoodMap lat={lat} lng={lng} />
+        </div>
       </div>
     );
   }

@@ -71,3 +71,12 @@ html, body, #root {
   font-weight: normal;
   color: rgb(0,157,156)
 }
+
+.chevron {
+  color: rgb(0,157,156);
+  margin-left: 5px;
+}
+
+.NeighborHoodMap {
+  margin-top: 15px;
+}
