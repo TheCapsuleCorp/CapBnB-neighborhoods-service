@@ -15,7 +15,7 @@ class App extends React.Component {
       lat: null,
       lng: null,
       guidebookId: null,
-    };
+    }
   }
 
   componentDidMount() {
@@ -37,26 +37,24 @@ class App extends React.Component {
       error: function(error) {
         console.log(error);
       },
-
     });
   };
 
   render() {
-    const { hostName, city, country, description, gettingAround, guidebookId, lat, lng } = this.state;
+    const { city, country, description, gettingAround, guidebookId, hostName, lat, lng } = this.state;
     return (
       <div className="app">
         <h2>The neighborhood</h2>
         <p>{hostName}'s place is located in {city}, {country}.</p>
         <p>{description}</p>
         <p>{gettingAround}</p>
-
-          <Details guidebookId={guidebookId} gettingAround={gettingAround} />
-        <div  className="NeighborHoodMap">
+        <Details guidebookId={guidebookId} gettingAround={gettingAround} />
+        <div className="NeighborHoodMap">
           <NeighborHoodMap lat={lat} lng={lng} />
         </div>
       </div>
     );
-  }
-}
+  };
+};
 
 export default App;

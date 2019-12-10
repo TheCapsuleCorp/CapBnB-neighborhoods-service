@@ -19,6 +19,10 @@
 
 > Some usage instructions
 
+### Google Maps API key
+
+> Some instructions for setting up and securing your own API key for Google Maps
+
 ## Requirements
 
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).

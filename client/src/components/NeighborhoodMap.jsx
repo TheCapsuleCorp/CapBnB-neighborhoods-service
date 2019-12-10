@@ -1,34 +1,43 @@
 import React from 'react';
 import Details from './Details';
 import { Map, GoogleApiWrapper } from 'google-maps-react';
-const googleMapApi = require('../../../googleMapConfig');
+
+// DO NOT COMMIT ME TO VERSION CONTROL!!!!!
+const GOOGLE_MAPS_API_KEY = 'AIzaSyAvEiMdWiSAe0creBJcvd4zEeRlWNBMaJw';
 
 class NeighborHoodMap extends React.Component {
   constructor(props) {
     super(props);
-
   }
-
 
   render() {
     const mapStyles = {
-      width: '50%',
-      height: '50%',
+      width: '100%',
+      height: '500px',
+      position: 'relative',
     };
 
     const { lat, lng } = this.props;
 
     return (
-        <Map
-          google={this.props.google}
-          zoom={8}
-          style={mapStyles}
-          initialCenter={{ lat: lat, lng: lng}}
-        />
+    <div>
+      <div className="map-out">
+        <div className="map-in">
+          <Map
+            google={this.props.google}
+            zoom={8}
+            style={mapStyles}
+            initialCenter={{ lat: lat, lng: lng}}
+          />
+        </div>
+      </div>
+        <div className="exact-location">Exact location information is provided after a booking is confirmed
+        </div>
+    </div>
     );
-  }
-}
+  };
+};
 
-  export default GoogleApiWrapper({
-    apiKey: 'AIzaSyCY1Do1VkdQyhIBB4KPOGOQbZqxpFHK86g',
-  })(NeighborHoodMap);
+export default GoogleApiWrapper({
+  apiKey: GOOGLE_MAPS_API_KEY,
+})(NeighborHoodMap);
