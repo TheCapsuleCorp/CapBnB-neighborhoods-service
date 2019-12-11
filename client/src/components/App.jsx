@@ -44,8 +44,8 @@ class App extends React.Component {
     const { city, country, description, gettingAround, guidebookId, hostName, lat, lng } = this.state;
     return (
       <div className="app">
-        <h2>The neighborhood</h2>
-        <p>{hostName}'s place is located in {city}, {country}.</p>
+        <span className="nbh">The neighborhood</span>
+        <p>{hostName}'s place is located in <a href="#">{city}</a>, <a href="#">{country}</a>.</p>
         <p>{description}</p>
         <p>{gettingAround}</p>
         <Details guidebookId={guidebookId} gettingAround={gettingAround} />

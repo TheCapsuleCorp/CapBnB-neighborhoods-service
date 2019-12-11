@@ -21,19 +21,19 @@ class NeighborHoodMap extends React.Component {
 
     return (
     <div>
-      <div className="map-out">
-        <div className="map-in">
-          <Map
-            google={this.props.google}
-            zoom={8}
-            style={mapStyles}
-            initialCenter={{ lat: lat, lng: lng}}
-          />
+      <div className="map-wrapper">
+        <div className="map-out">
+          <div className="map-in">
+            <Map
+              google={this.props.google}
+              zoom={8}
+              style={mapStyles}
+              initialCenter={{ lat: lat, lng: lng}}
+            />
+            </div>
+          </div>
         </div>
       </div>
-        <div className="exact-location">Exact location information is provided after a booking is confirmed
-        </div>
-    </div>
     );
   };
 };
