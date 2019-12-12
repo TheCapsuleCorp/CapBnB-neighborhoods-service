@@ -1,7 +1,9 @@
 import React from 'react';
 import Details from './Details';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import $ from 'jquery';
+import { Map } from 'google-maps-react';
 import NeighborHoodMap from './NeighborhoodMap';
+import '../../dist/index.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,7 +22,7 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: `/api/rooms/${this.props.roomId}/neighborhood`,
+      url: `http://localhost:3000/api/rooms/${this.props.roomId}/neighborhood`,
       method: 'GET',
       success: (neighborhood) => {
         this.setState({
@@ -49,9 +51,7 @@ class App extends React.Component {
         <p>{description}</p>
         <p>{gettingAround}</p>
         <Details guidebookId={guidebookId} gettingAround={gettingAround} />
-        <div className="NeighborHoodMap">
-          <NeighborHoodMap lat={lat} lng={lng} />
-        </div>
+        <NeighborHoodMap lat={lat} lng={lng} />
       </div>
     );
   };
