@@ -1,4 +1,5 @@
 const fs = require('fs');
+const cors = require('cors');
 const express = require('express');
 const app = express();
 const bodyparser = require('body-parser');
@@ -10,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 const nhController = require('../database/controllers/neighborhoods.js');
 
 
-
+app.use(cors());
 app.use(bodyparser.json());
 //looks at requests where the Content-Type: application/json header is present
 //and transforms the text-based JSON input into JS-accessible variables under req.body.
