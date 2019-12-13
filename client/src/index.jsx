@@ -11,6 +11,6 @@ const Neighborhoods = () => (
   <App roomId={listingId} />
 );
 
-ReactDOM.render(<App roomId={listingId} />, document.getElementById('root'));
+// ReactDOM.render(<App roomId={listingId} />, document.getElementById('root'));
 
 export default Neighborhoods;
