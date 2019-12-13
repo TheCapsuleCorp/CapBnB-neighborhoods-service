@@ -21,7 +21,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log('component mounted');
     $.ajax({
       url: `http://localhost:3000/api/rooms/${this.props.roomId}/neighborhood`,
       method: 'GET',
