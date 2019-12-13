@@ -40,7 +40,7 @@ class App extends React.Component {
         console.log(error);
       },
     });
-  };
+  }
 
   render() {
     const { city, country, description, gettingAround, guidebookId, hostName, lat, lng } = this.state;
@@ -48,7 +48,7 @@ class App extends React.Component {
       <div className="app">
         <span className="nbh">The neighborhood</span>
         <p>{hostName}'s place is located in <a href={`https://www.airbnb.com/s/${city}--${country}/all`}>{city}</a>
-          , <a href={`http://www.airbnb.com/s/${country}/all`}>{country}</a>.
+        , <a href={`http://www.airbnb.com/s/${country}/all`}>{country}</a>.
         </p>
         <p>{description}</p>
         <p>{gettingAround}</p>
