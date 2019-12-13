@@ -2,7 +2,7 @@
   box-sizing: border-box;
 },
 
-@font-face {
+/* @font-face {
   font-family: 'Cereal';
   src: url('./assets/fonts/AirBnB-Cereal/AirbnbCerealApp-Book.woff2') format('woff2'),
        url('./assets/fonts/AirBnB-Cereal/AirbnbCerealApp-Book.woff') format('woff');
@@ -48,7 +48,7 @@
        url('./assets/fonts/AirBnB-Cereal/AirbnbCerealApp-Black.woff') format('woff');
   font-weight: 900;
   font-style: normal;
-}
+} */
 
 html, body, #root {
   background-color: white;
