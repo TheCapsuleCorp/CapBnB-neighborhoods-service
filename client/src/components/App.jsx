@@ -1,7 +1,9 @@
 import React from 'react';
 import Details from './Details';
-import { Map, GoogleApiWrapper } from 'google-maps-react';
+import $ from 'jquery';
+import { Map } from 'google-maps-react';
 import NeighborHoodMap from './NeighborhoodMap';
+import '../../dist/index.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,7 +22,7 @@ class App extends React.Component {
 
   componentDidMount() {
     $.ajax({
-      url: `/api/rooms/${this.props.roomId}/neighborhood`,
+      url: `http://localhost:3000/api/rooms/${this.props.roomId}/neighborhood`,
       method: 'GET',
       success: (neighborhood) => {
         this.setState({
@@ -37,23 +39,21 @@ class App extends React.Component {
       error: function(error) {
         console.log(error);
       },
-
     });
   };
 
   render() {
-    const { hostName, city, country, description, gettingAround, guidebookId, lat, lng } = this.state;
+    const { city, country, description, gettingAround, guidebookId, hostName, lat, lng } = this.state;
     return (
       <div className="app">
-        <h2>The neighborhood</h2>
-        <p>{hostName}'s place is located in {city}, {country}.</p>
+        <span className="nbh">The neighborhood</span>
+        <p>{hostName}'s place is located in <a href={`https://www.airbnb.com/s/${city}--${country}/all`}>{city}</a>
+          , <a href={`http://www.airbnb.com/s/${country}/all`}>{country}</a>.
+        </p>
         <p>{description}</p>
         <p>{gettingAround}</p>
-
-          <Details guidebookId={guidebookId} gettingAround={gettingAround} />
-        <div  className="NeighborHoodMap">
-          <NeighborHoodMap lat={lat} lng={lng} />
-        </div>
+        <Details guidebookId={guidebookId} gettingAround={gettingAround} />
+        <NeighborHoodMap lat={lat} lng={lng} />
       </div>
     );
   }

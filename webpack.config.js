@@ -16,6 +16,13 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader',
+        ],
+      },
+      {
         test: /\.(eot|woff|woff2|svg|ttf)([\?]?.*)$/,
         use: [
           'file-loader',
@@ -24,6 +31,7 @@ module.exports = {
     ]
   },
   output: {
+    library: 'Neighborhoods',
     filename: 'bundle.js',
     path: __dirname + '/client/dist',
     library: 'NeighborhoodsModule',

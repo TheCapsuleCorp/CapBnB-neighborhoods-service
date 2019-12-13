@@ -2,7 +2,7 @@ import React from 'react';
 import ReadMore from './ReadMore';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-
+import '../../dist/index.css';
 
 class Details extends React.Component {
   constructor(props) {
@@ -28,9 +28,9 @@ class Details extends React.Component {
       icon = faChevronUp;
     }
     return (
-      <div>
+      <div className="details">
         <div onClick={this.handleReadMoreClick}>
-          <span className="readMore">Read more about the neighborhood</span>
+          <span className="readMoreText">Read more about the neighborhood</span>
             <FontAwesomeIcon className="chevron" icon={icon} />
         </div>
         {readMore}
